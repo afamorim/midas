@@ -5,6 +5,7 @@
  */
 package br.com.ajaio.midas.desktop.controller;
 
+import br.com.ajaio.midas.desktop.MainApp;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -16,6 +17,8 @@ import javafx.fxml.Initializable;
  */
 public class DashBoardController implements Initializable {
 
+    private MainApp mainApp;
+    
     /**
      * Initializes the controller class.
      */
@@ -24,4 +27,7 @@ public class DashBoardController implements Initializable {
         // TODO
     }    
     
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;        
+    }
 }

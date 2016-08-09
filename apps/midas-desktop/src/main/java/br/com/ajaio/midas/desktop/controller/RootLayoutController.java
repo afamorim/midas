@@ -3,30 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ajaio.midas.desktop;
+package br.com.ajaio.midas.desktop.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 /**
+ * FXML Controller class
  *
- * @author afamorim
+ * @author antonio.amorim
  */
-public class mainAppFXMLController implements Initializable {
-    
-    @FXML
-    private Button btLogin;
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        
-    }
-    
+public class RootLayoutController implements Initializable {
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
