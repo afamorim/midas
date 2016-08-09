@@ -2,3 +2,5 @@
 /apps/midas-desktop/dist/
 /apps/midas-desktop/build/
 /apps/midas-teste/target/
+/apps/midas-core/target/
+/apps/midas-business/target/
