@@ -46,5 +46,9 @@
 	<bean id="transactionManager"
 		class="org.springframework.transaction.jta.JtaTransactionManager" />
 	<tx:annotation-driven transaction-manager="transactionManager" />
-
+        
+        <!--jdbc:embedded-database id="dataSource" type="DERBY">
+            <jdbc:script location="classpath:db/sql/create-db.sql" />
+            <jdbc:script location="classpath:db/sql/insert-data.sql" />
+        </jdbc:embedded-database-->
 </beans>

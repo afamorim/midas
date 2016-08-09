@@ -17,18 +17,25 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author afamorim
  */
 public class MainApp extends Application {
-    private BorderPane rootLayout;
+    private BorderPane          rootLayout;
     
-    private Stage primaryStage; 
+    private Stage               primaryStage;
+    
+    private ApplicationContext  context;
     
     @Override
     public void start(Stage stage) throws Exception {
+        
+        context = new ClassPathXmlApplicationContext("application-context.xml");
+        
         primaryStage = stage;
         
 //        rootLayout = FXMLLoader.load(getClass().getResource("mainAppFXML.fxml"));
