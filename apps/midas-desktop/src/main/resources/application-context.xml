@@ -6,4 +6,8 @@
     
     <import resource="application-context-persistence.xml" />
     
+    <bean id="usuarioService"
+		class="br.com.ajaio.midas.seguranca.service.UsuarioService">        
+    </bean>
+    
 </beans>

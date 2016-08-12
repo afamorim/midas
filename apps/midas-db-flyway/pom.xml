@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>br.com.ajaio</groupId>
-  <artifactId>midas-db-flyway</artifactId>
-  <version>1.0</version>
-  
-  <name>midas-db-flyway</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.ajaio</groupId>
+    <artifactId>midas-db-flyway</artifactId>
+    <version>1.0</version>
+
+    <name>midas-db-flyway</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <derby.version>10.11.1.1</derby.version>
+    </properties>
+    <dependencies>
   
   </dependencies>
 
@@ -20,29 +21,33 @@
     
     <plugins>
       
-      <plugin>
-        <groupId>org.flywaydb</groupId>
+        <plugin>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-maven-plugin</artifactId>
             <version>3.0</version>
-        <configuration>
-          <url>jdbc:derby://localhost:1527/midas</url>
-          <user>root</user>
-          <password>sa102101</password>
-          <cleanOnValidationError>false</cleanOnValidationError>
-          <initOnMigrate>true</initOnMigrate>
-          <initVersion>1.0</initVersion>
-          <skip>false</skip>
+            <configuration>
+                <url>jdbc:derby://localhost:1527/midas</url>
+                <user>root</user>
+                <password>sa102101</password>
+                <cleanOnValidationError>false</cleanOnValidationError>
+                <initOnMigrate>true</initOnMigrate>
+                <initVersion>1.0</initVersion>
+                <skip>false</skip>
+            </configuration>
 
-        </configuration>
-
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derbyclient</artifactId>
-            <version>10.12.1.1</version>
-          </dependency>
-
-        </dependencies>
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.derby</groupId>
+                    <artifactId>derbyclient</artifactId>
+                    <version>${derby.version}</version>
+                </dependency>
+                
+                <dependency>
+                    <groupId>org.apache.derby</groupId>
+                    <artifactId>derby</artifactId>
+                    <version>${derby.version}</version>
+                </dependency>
+            </dependencies>
       </plugin>
     </plugins>
     

@@ -34,8 +34,6 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        context = new ClassPathXmlApplicationContext("application-context.xml");
-        
         primaryStage = stage;
         
 //        rootLayout = FXMLLoader.load(getClass().getResource("mainAppFXML.fxml"));
@@ -47,6 +45,8 @@ public class MainApp extends Application {
         initRootLayout();
         
         showLoginView();
+        
+        context = new ClassPathXmlApplicationContext("application-context.xml");
     }
     
     public void initRootLayout(){

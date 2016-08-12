@@ -55,6 +55,18 @@
             <artifactId>derby</artifactId>
             <version>${derby.version}</version>
 	</dependency>
+        
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>2.4.7</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.vortice.core</groupId>
+            <artifactId>vortice-core</artifactId>
+            <version>1.8-SNAPSHOT</version>
+    	</dependency>
     </dependencies>
 	
     <build>

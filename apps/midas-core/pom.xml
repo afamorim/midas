@@ -9,6 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <name>midas-core</name>
     <url>http://maven.apache.org</url>
+    
+    <properties>
+        <derby.version>10.11.1.1</derby.version>
+    </properties>
 	
     <dependencyManagement>
         <dependencies>

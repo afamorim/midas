@@ -8,20 +8,21 @@ package br.com.ajaio.midas.core;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
  *
  * @author antonio.amorim
  */
-@Entity
+@Entity(name = "usuario")
 public class UsuarioEntity {
     
     private Long    codigo;
     private String  login;
     private String  senha;
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getCodigo() {
         return codigo;
     }

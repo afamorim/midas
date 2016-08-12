@@ -1,13 +1,13 @@
 CREATE TABLE usuario(
-    codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
     login VARCHAR(45) NOT NULL,
     senha VARCHAR(150) NOT NULL,
     PRIMARY KEY (codigo)
 );
 
 CREATE TABLE banco (
-    codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
-    usuario_codigo INTEGER NOT NULL,
+    codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
+    usuario_codigo BIGINT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     numero INTEGER,
     PRIMARY KEY (codigo),
@@ -19,9 +19,9 @@ CREATE TABLE banco (
 );
 
 CREATE TABLE conta (
-    codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
-    banco_codigo INTEGER NOT NULL,
-    usuario_codigo INTEGER NOT NULL,
+    codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
+    banco_codigo BIGINT NOT NULL,
+    usuario_codigo BIGINT NOT NULL,
     saldo DOUBLE NOT NULL,
     PRIMARY KEY (codigo),
     CONSTRAINT fk_CONTA_BANCO
@@ -37,10 +37,10 @@ CREATE TABLE conta (
 );
 
 CREATE TABLE cartao (
-  codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+  codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
   nome VARCHAR(50) NOT NULL,
   dia_fechamento INTEGER NOT NULL,
-  usuario_codigo INTEGER NOT NULL,
+  usuario_codigo BIGINT NOT NULL,
   PRIMARY KEY (codigo),
   CONSTRAINT fk_CARTAO_USUARIO1
     FOREIGN KEY (usuario_codigo)
@@ -50,8 +50,8 @@ CREATE TABLE cartao (
 );
 
 CREATE TABLE tipo_recorrente (
-  codigo INTEGER NOT NULL,
-  nome VARCHAR(50) NOT NULL COMMENT 'SEMANA, QUINZENAL, MENSAL, TRIMESTRAL, SEMESTRAL, ANUAL',
+  codigo BIGINT NOT NULL,
+  nome VARCHAR(50) NOT NULL,
   PRIMARY KEY (codigo)
 );
 
@@ -62,22 +62,22 @@ INSERT INTO tipo_recorrente (codigo, nome) VALUES (4, 'TRIMESTRAL');
 INSERT INTO tipo_recorrente (codigo, nome) VALUES (5, 'SEMESTRAL');
 
 CREATE TABLE tipo_movimentacao (
-  codigo INTEGER NOT NULL,
+  codigo BIGINT NOT NULL,
   nome VARCHAR(50) NOT NULL,
   PRIMARY KEY (codigo)
 );
 
 CREATE TABLE tag_movimentacao (
-  codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+  codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
   nome VARCHAR(150) NOT NULL,
   PRIMARY KEY (CODIGO))
 ;
 
 CREATE TABLE fatura_cartao (
-  codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+  codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
   valor DOUBLE NOT NULL,
   mes_ano_referencia INTEGER NOT NULL,
-  cartao_codigo INTEGER NOT NULL,
+  cartao_codigo BIGINT NOT NULL,
   PRIMARY KEY (codigo),
   CONSTRAINT fk_FATURA_CARTAO_CARTAO1
     FOREIGN KEY (cartao_codigo)
@@ -86,16 +86,18 @@ CREATE TABLE fatura_cartao (
     ON UPDATE NO ACTION
 );
 
+
+
 CREATE TABLE movimentacao (
-  codigo INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
-  tipo_movimentacao_codigo INTEGER NOT NULL,
-  tipo_recorrente_codigo INTEGER NOT NULL,
-  cartao_codigo INTEGER NOT NULL,
-  conta_codigo INTEGER NOT NULL,
+  codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
+  tipo_movimentacao_codigo BIGINT NOT NULL,
+  tipo_recorrente_codigo BIGINT NOT NULL,
+  cartao_codigo BIGINT NOT NULL,
+  conta_codigo BIGINT NOT NULL,
   DATA TIMESTAMP NOT NULL,
   descricao VARCHAR(250) NOT NULL,
-  tag_movimentacao_codigo INTEGER NOT NULL,
-  fatura_cartao_codigo INTEGER NOT NULL,
+  tag_movimentacao_codigo BIGINT NOT NULL,
+  fatura_cartao_codigo BIGINT NOT NULL,
   PRIMARY KEY (codigo),
   CONSTRAINT fk_MOVIMENTACAO_TIPO_RECORRENTE1
     FOREIGN KEY (tipo_recorrente_codigo)
@@ -128,3 +130,4 @@ CREATE TABLE movimentacao (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
+
