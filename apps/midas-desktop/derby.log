@@ -1,4 +1,4 @@
-Fri Aug 12 00:13:09 BRT 2016 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+Fri Aug 12 16:27:24 BRT 2016 Thread[JavaFX Application Thread,5,main] Cleanup action starting
 java.sql.SQLException: Database 'memory:midas' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)

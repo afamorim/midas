@@ -13,11 +13,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author afamorim
  */
+@Repository
 public interface UsuarioRepository extends CrudRepository<UsuarioEntity, Long>{//PagingAndSortingRepository<UsuarioEntity, Long>{
     
     @Query(value = "SELECT * FROM PERSON p WHERE p.name like :pattern", nativeQuery = true)

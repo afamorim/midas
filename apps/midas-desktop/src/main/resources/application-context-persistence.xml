@@ -55,24 +55,25 @@
         
         <jpa:repositories base-package="br.com.ajaio.midas.seguranca.repository"/>
         
-        <bean depends-on="dataSource" class="org.springframework.beans.factory.config.MethodInvokingBean">
+        <!--VER QUE MERDA É ESSA!!!
+            bean depends-on="dataSource" class="org.springframework.beans.factory.config.MethodInvokingBean">
             <property name="targetClass" value="org.hsqldb.util.DatabaseManagerSwing" />
             <property name="targetMethod" value="main" />
             <property name="arguments">
                 <list>
-                    <value>--url</value>
+                    <value>url</value>
                     <value>jdbc:derby:memory:midas</value>
-                    <value>--user</value>
+                    <value>user</value>
                     <value>root</value>
-                    <value>--password</value>
+                    <value>password</value>
                     <value>sa102101</value>
                 </list>
             </property>
-        </bean>
+        </bean-->
         
         <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver" />
+		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
 		<property name="url" value="jdbc:derby://localhost:1527/midas" />
 		<property name="username" value="root" />
 		<property name="password" value="sa102101" />

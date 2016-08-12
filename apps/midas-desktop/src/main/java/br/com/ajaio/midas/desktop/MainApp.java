@@ -5,8 +5,10 @@
  */
 package br.com.ajaio.midas.desktop;
 
+import br.com.ajaio.midas.core.UsuarioEntity;
 import br.com.ajaio.midas.desktop.controller.DashBoardController;
 import br.com.ajaio.midas.desktop.controller.LoginController;
+import br.com.ajaio.midas.seguranca.service.UsuarioService;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,6 +49,11 @@ public class MainApp extends Application {
         showLoginView();
         
         context = new ClassPathXmlApplicationContext("application-context.xml");
+        UsuarioService usuarioService = (UsuarioService)context.getBean("usuarioService");
+        UsuarioEntity usuario = new UsuarioEntity();
+        usuario.setLogin("admin");
+        usuario.setSenha("teste");
+        usuarioService.login(usuario);
     }
     
     public void initRootLayout(){
