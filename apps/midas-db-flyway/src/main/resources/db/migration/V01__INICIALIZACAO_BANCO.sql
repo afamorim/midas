@@ -7,15 +7,9 @@ CREATE TABLE usuario(
 
 CREATE TABLE banco (
     codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
-    usuario_codigo BIGINT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     numero INTEGER,
-    PRIMARY KEY (codigo),
-    CONSTRAINT fk_BANCO_USUARIO1
-        FOREIGN KEY (usuario_codigo)
-        REFERENCES usuario (codigo)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION
+    PRIMARY KEY (codigo)
 );
 
 CREATE TABLE conta (

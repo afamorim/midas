@@ -25,5 +25,5 @@ public interface UsuarioRepository extends CrudRepository<UsuarioEntity, Long>{/
     @Query(value = "SELECT * FROM PERSON p WHERE p.name like :pattern", nativeQuery = true)
     Set<UsuarioEntity> searchNatively(@Param("pattern") String pattern);
     
-    Set<UsuarioEntity> findByLoginAndSenha(@Param("login") String login, @Param("senha") String senha);
+    UsuarioEntity findByLoginAndSenha(@Param("login") String login, @Param("senha") String senha);
 }

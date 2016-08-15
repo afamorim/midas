@@ -25,9 +25,10 @@ public class UsuarioService {
     }
     
     public UsuarioEntity login(UsuarioEntity aUsuario) throws AplicacaoException{
-        Set<UsuarioEntity> retorno = usuarioRepository.findByLoginAndSenha(aUsuario.getLogin(), aUsuario.getSenha());
-        
-        return (UsuarioEntity)retorno.toArray()[0];
+        UsuarioEntity retorno = usuarioRepository.findByLoginAndSenha(aUsuario.getLogin(), aUsuario.getSenha());
+        if (retorno != null)
+            return retorno;
+        else throw new AplicacaoException("Os dados informados, login ou senha, não são válidos.");
     }
 
     public void setUsuarioRepository(UsuarioRepository usuarioRepository) {

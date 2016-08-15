@@ -49,11 +49,7 @@ public class MainApp extends Application {
         showLoginView();
         
         context = new ClassPathXmlApplicationContext("application-context.xml");
-        UsuarioService usuarioService = (UsuarioService)context.getBean("usuarioService");
-        UsuarioEntity usuario = new UsuarioEntity();
-        usuario.setLogin("admin");
-        usuario.setSenha("teste");
-        usuarioService.login(usuario);
+        
     }
     
     public void initRootLayout(){
@@ -93,6 +89,7 @@ public class MainApp extends Application {
             
             DashBoardController controller = loader.getController();
             controller.setMainApp(this);
+            
             
             rootLayout.setCenter(dashBoardOverview);
         }catch(Exception e){
