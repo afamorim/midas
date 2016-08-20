@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ajaio.midas.desktop.controller.DashBoardController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ajaio.midas.desktop.controller.DashBoardController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <left>
+            <Accordion prefHeight="400.0" prefWidth="188.0" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane animated="false" text="Contas">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button id="btNovaConta" layoutX="-2.0" layoutY="318.0" mnemonicParsing="false" onAction="#addConta" prefHeight="27.0" prefWidth="188.0" text="Nova Conta" />
+                              <TableView fx:id="tbContas" prefHeight="318.0" prefWidth="187.0">
+                                <columns>
+                                  <TableColumn prefWidth="186.0" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Cartões">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </left>
+      </BorderPane>
+   </children>
+   
 </AnchorPane>

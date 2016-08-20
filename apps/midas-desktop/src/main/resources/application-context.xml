@@ -11,8 +11,16 @@
     
     <context:annotation-config/>
     
+    <bean id="contaService"
+            class="br.com.ajaio.midas.service.ContaService">
+    </bean>
+    
+    <bean id="bancoService"
+            class="br.com.ajaio.midas.service.BancoService">
+    </bean>
+    
     <bean id="usuarioService"
-		class="br.com.ajaio.midas.seguranca.service.UsuarioService">        
+            class="br.com.ajaio.midas.seguranca.service.UsuarioService">        
     </bean>
     
 </beans>

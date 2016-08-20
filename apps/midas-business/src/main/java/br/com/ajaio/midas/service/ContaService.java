@@ -21,7 +21,7 @@ public class ContaService {
     private ContaRepository contaRepository;
 
     public Set<ContaEntity> findByUsuario(UsuarioEntity aUsuario){
-        return contaRepository.findByUsuario(aUsuario.getCodigo());
+        return contaRepository.findByUsuario(aUsuario);
     }
     
     public void setContaRepository(ContaRepository contaRepository) {

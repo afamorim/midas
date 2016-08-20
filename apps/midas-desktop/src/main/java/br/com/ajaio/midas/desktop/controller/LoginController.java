@@ -49,10 +49,15 @@ public class LoginController implements Initializable {
         usuarioLogado = new UsuarioEntity();
         usuarioLogado.setLogin(txLogin.getText());
         usuarioLogado.setSenha(txSenha.getText());
-        usuarioLogado = usuarioService.login(usuarioLogado);
+        try {
+            usuarioLogado = usuarioService.login(usuarioLogado);
         if (usuarioLogado != null){
             System.out.println("br.com.ajaio.midas.desktop.controller.LoginController.logar()");
+            mainApp.setUsuarioLogado(usuarioLogado);
             mainApp.showDashBoardView();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

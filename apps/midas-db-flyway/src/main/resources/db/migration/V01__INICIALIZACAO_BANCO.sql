@@ -16,6 +16,8 @@ CREATE TABLE conta (
     codigo BIGINT NOT NULL GENERATED ALWAYS AS IDENTITY,
     banco_codigo BIGINT NOT NULL,
     usuario_codigo BIGINT NOT NULL,
+    agencia VARCHAR(10) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
     saldo DOUBLE NOT NULL,
     PRIMARY KEY (codigo),
     CONSTRAINT fk_CONTA_BANCO

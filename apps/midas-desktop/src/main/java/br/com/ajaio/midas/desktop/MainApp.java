@@ -6,8 +6,10 @@
 package br.com.ajaio.midas.desktop;
 
 import br.com.ajaio.midas.core.UsuarioEntity;
+import br.com.ajaio.midas.desktop.controller.BancoCrudFXMLController;
 import br.com.ajaio.midas.desktop.controller.DashBoardController;
 import br.com.ajaio.midas.desktop.controller.LoginController;
+import br.com.ajaio.midas.desktop.controller.RootLayoutController;
 import br.com.ajaio.midas.seguranca.service.UsuarioService;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -33,6 +35,8 @@ public class MainApp extends Application {
     
     private ApplicationContext  context;
     
+    private UsuarioEntity       usuarioLogado;
+    
     @Override
     public void start(Stage stage) throws Exception {
         
@@ -56,8 +60,11 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/rootLayoutFXML.fxml"));
-            System.out.println(MainApp.class.getResource("view/rootLayoutFXML.fxml"));
             rootLayout = (BorderPane) loader.load();
+            
+            RootLayoutController rootLayoutController = loader.getController();
+            rootLayoutController.setMainApp(this);
+            
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -89,10 +96,25 @@ public class MainApp extends Application {
             
             DashBoardController controller = loader.getController();
             controller.setMainApp(this);
-            
+            controller.setUsuarioLogado(usuarioLogado);
+            controller.loadDashBoard();
             
             rootLayout.setCenter(dashBoardOverview);
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void showBancoCrud(){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/bancoCrudFXML.fxml"));
+            AnchorPane bancoCrud = (AnchorPane) loader.load();
+            BancoCrudFXMLController bancoController = loader.getController();
+            bancoController.setMainApp(this);
+            
+            rootLayout.setCenter(bancoCrud);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -103,5 +125,8 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
+    public void setUsuarioLogado(UsuarioEntity usuarioLogado) {
+        this.usuarioLogado = usuarioLogado;
+    }
 }

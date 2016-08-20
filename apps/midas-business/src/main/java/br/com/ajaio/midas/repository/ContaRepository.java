@@ -6,6 +6,7 @@
 package br.com.ajaio.midas.repository;
 
 import br.com.ajaio.midas.core.ContaEntity;
+import br.com.ajaio.midas.core.UsuarioEntity;
 import java.util.Set;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -17,5 +18,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContaRepository extends CrudRepository<ContaEntity, Long>{
     
-    public Set<ContaEntity> findByUsuario(Long usuarioCodigo);
+    public Set<ContaEntity> findByUsuario(UsuarioEntity aUsuario);
 }

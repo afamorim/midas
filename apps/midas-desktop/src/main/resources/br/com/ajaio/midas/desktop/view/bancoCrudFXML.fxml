@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ajaio.midas.desktop.controller.BancoCrudFXMLController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="190.0" prefWidth="600.0" spacing="10.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="170.0">
+                           <children>
+                              <Label text="Nome" />
+                              <TextField fx:id="txNome" promptText="Nome" />
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="170.0">
+                           <children>
+                              <Label text="Número">
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="txNumero" promptText="Número do Banco" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="47.0" prefWidth="600.0" />
+                  <VBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="600.0">
+                     <children>
+                        <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="600.0" spacing="5.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#consultar" text="Consulta" />
+                              <Button mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="tbBancos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="320.0" prefWidth="600.0" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

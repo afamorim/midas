@@ -5,7 +5,6 @@
  */
 package br.com.ajaio.midas.desktop.controller;
 
-import br.com.ajaio.midas.desktop.MainApp;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -15,22 +14,14 @@ import javafx.fxml.Initializable;
  *
  * @author antonio.amorim
  */
-public class RootLayoutController extends BaseController {
+public class PopContaFormFXMLController implements Initializable {
 
-    private MainApp         mainApp;
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // TODO
     }    
     
-    public void goToBancoForm(){
-        mainApp.showBancoCrud();
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-    }
 }
