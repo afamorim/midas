@@ -5,6 +5,7 @@
  */
 package br.com.ajaio.midas.desktop.entity;
 
+import br.com.ajaio.midas.core.BancoEntity;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -13,10 +14,20 @@ import javafx.beans.property.SimpleStringProperty;
  * @author antonio.amorim
  */
 public class Banco {
+    
+    public Banco(){}
+    
+    public Banco(BancoEntity aBanco){
+        codigo = new SimpleLongProperty(aBanco.getCodigo());
+        nome = new SimpleStringProperty(aBanco.getNome());
+        numeroBanco = new SimpleStringProperty((aBanco.getNumero() != null) 
+                ? aBanco.getNumero().toString() 
+                : null);
+    }
+    
     private SimpleLongProperty      codigo;
     private SimpleStringProperty    nome;
     private SimpleStringProperty    numeroBanco;
-    private Usuario                 usuario;
 
     public SimpleLongProperty getCodigo() {
         return codigo;
@@ -35,11 +46,5 @@ public class Banco {
     }
     public void setNumeroBanco(SimpleStringProperty numeroBanco) {
         this.numeroBanco = numeroBanco;
-    }   
-    public Usuario getUsuario() {
-        return usuario;
-    }
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 }

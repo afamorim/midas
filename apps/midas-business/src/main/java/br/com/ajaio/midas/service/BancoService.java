@@ -7,6 +7,7 @@ package br.com.ajaio.midas.service;
 
 import br.com.ajaio.midas.core.BancoEntity;
 import br.com.ajaio.midas.repository.BancoRepository;
+import com.vortice.core.exception.AplicacaoException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +19,15 @@ public class BancoService {
     
     @Autowired
     private BancoRepository bancoRepository;
+    
+    public BancoEntity insert(BancoEntity aBanco) throws AplicacaoException{
+        aBanco = bancoRepository.save(aBanco);
+        return aBanco;
+    }
+    
+    public void update(BancoEntity aBanco) throws AplicacaoException{
+        aBanco = bancoRepository.save(aBanco);
+    }
     
     public Iterable<BancoEntity> findAll(){
         return bancoRepository.findAll();

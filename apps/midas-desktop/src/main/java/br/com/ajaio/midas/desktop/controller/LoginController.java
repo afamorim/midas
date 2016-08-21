@@ -22,7 +22,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author antonio.amorim
  */
-public class LoginController implements Initializable {
+public class LoginController extends BaseController {
 
     @FXML
     private TextField       txLogin;
@@ -57,7 +57,7 @@ public class LoginController implements Initializable {
             mainApp.showDashBoardView();
         }
         } catch (Exception e) {
-            e.printStackTrace();
+            tratarExcecao(e);
         }
     }
 
