@@ -28,7 +28,7 @@
                     <props>
                         <prop key="hibernate.format_sql">true</prop>
                         <prop key="hibernate.show_sql">true</prop>
-                        <prop key="hibernate.hbm2ddl.auto">validate</prop>
+                        <prop key="hibernate.hbm2ddl.auto">create</prop>
                         <prop key="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect</prop>
                         <prop key="javax.persistence.schema-generation.database.action">none</prop>
                     </props>
@@ -73,10 +73,10 @@
         
         <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
-		<property name="url" value="jdbc:derby://localhost:1527/midas" />
+		<property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver" />
+		<property name="url" value="jdbc:derby:midas/midasdb" />
 		<property name="username" value="root" />
-		<property name="password" value="sa102101" />
+		<property name="password" value="root" />
 	</bean>
         <!--jdbc:embedded-database id="dataSource" type="DERBY">
             <jdbc:script location="classpath:db/sql/create-db.sql" />
