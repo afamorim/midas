@@ -29,22 +29,22 @@ public class Banco {
     private SimpleStringProperty    nome;
     private SimpleStringProperty    numeroBanco;
 
-    public SimpleLongProperty getCodigo() {
-        return codigo;
+    public Long getCodigo() {
+        return codigo.get();
     }
-    public void setCodigo(SimpleLongProperty codigo) {
-        this.codigo = codigo;
+    public void setCodigo(Long codigo) {
+        this.codigo.set(codigo);
     }
-    public SimpleStringProperty getNome() {
-        return nome;
+    public String getNome() {
+        return nome.get();
     }
-    public void setNome(SimpleStringProperty nome) {
-        this.nome = nome;
+    public void setNome(String nome) {
+        this.nome.set(nome);
     }
-    public SimpleStringProperty getNumeroBanco() {
-        return numeroBanco;
+    public String getNumeroBanco() {
+        return numeroBanco.get();
     }
-    public void setNumeroBanco(SimpleStringProperty numeroBanco) {
-        this.numeroBanco = numeroBanco;
+    public void setNumeroBanco(String numeroBanco) {
+        this.numeroBanco.set(numeroBanco);
     }
 }

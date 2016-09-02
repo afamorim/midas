@@ -54,11 +54,15 @@ public class BancoCrudFXMLController extends BaseController {
                 new PropertyValueFactory<Banco, String>("nome"));
         
         TableColumn numeroCol = new TableColumn("Número Banco");
-        nomeCol.setMinWidth(150);
-        nomeCol.setCellValueFactory(
-                new PropertyValueFactory<Banco, String>("numero"));
+        numeroCol.setMinWidth(150);
+        numeroCol.setCellValueFactory(
+                new PropertyValueFactory<Banco, String>("numeroBanco"));
         
-        tbBancos.getColumns().addAll(nomeCol, numeroCol);
+        TableColumn editar = new TableColumn("Editar");
+        
+        TableColumn apagar = new TableColumn("Apagar");
+        
+        tbBancos.getColumns().addAll(nomeCol, numeroCol, editar, apagar);
         
         context = new ClassPathXmlApplicationContext("application-context.xml");
     }    
