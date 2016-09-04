@@ -26,6 +26,8 @@ public class ContaEntity {
     private String          agencia;
     private String          numero;
     private Double          saldo;
+    private String          gerente;
+    private String          telefone;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getCodigo() {
@@ -76,4 +78,21 @@ public class ContaEntity {
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
+
+    @Column(name="gerente")
+    public String getGerente() {
+        return gerente;
+    }
+    public void setGerente(String gerente) {
+        this.gerente = gerente;
+    }
+
+    @Column(name="telefone")
+    public String getTelefone() {
+        return telefone;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+    
 }

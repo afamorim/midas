@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author antonio.amorim
  */
-public class PopContaFormFXMLController implements Initializable {
+public class PopContaFormFXMLController extends ContaController {
 
     /**
      * Initializes the controller class.

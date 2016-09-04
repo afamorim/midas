@@ -38,6 +38,9 @@
                            </children>
                         </VBox>
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                   </HBox>
                   <VBox prefHeight="47.0" prefWidth="600.0" />
                   <VBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="600.0">
@@ -50,13 +53,13 @@
                               <Insets left="5.0" right="5.0" />
                            </padding>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#consultar" text="Consulta" />
+                              <Button mnemonicParsing="false" onAction="#consultar" text="Consultar" />
                               <Button mnemonicParsing="false" onAction="#salvar" text="Salvar" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <TableView fx:id="tbBancos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="320.0" prefWidth="600.0" />
+                  <TableView fx:id="tbBancos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="600.0" />
                </children>
             </VBox>
          </center>

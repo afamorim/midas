@@ -29,6 +29,10 @@ public class RootLayoutController extends BaseController {
     public void goToBancoForm(){
         mainApp.showBancoCrud();
     }
+    
+    public void goToDashBoard(){
+        mainApp.showDashBoardView();
+    }
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;

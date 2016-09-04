@@ -18,12 +18,18 @@ public class Conta {
     public Conta(){}
     
     public Conta(ContaEntity c){
-        nome = new SimpleStringProperty();
-        setNome(c);
+        nomeBanco = new SimpleStringProperty();
+        setNomeBanco(c);
+        
     }
     
     private SimpleLongProperty      codigo;
-    private SimpleStringProperty    nome;
+    private SimpleStringProperty    nomeBanco;
+    private SimpleStringProperty    nomeAgencia;
+    private SimpleStringProperty    nomeConta;
+    private SimpleStringProperty    gerente;
+    private SimpleStringProperty    telefone;
+    private SimpleStringProperty    saldoAtual;
 
     public SimpleLongProperty getCodigo() {
         return codigo;
@@ -32,15 +38,14 @@ public class Conta {
         this.codigo = codigo;
     }
 
-    public SimpleStringProperty getNome() {
-        return nome;
+    public SimpleStringProperty getNomeBanco() {
+        return nomeBanco;
     }
-    public void setNome(SimpleStringProperty nome) {
-        this.nome = nome;
+    public void setNomeBanco(SimpleStringProperty nome) {
+        this.nomeBanco = nome;
     }
     
-    public void setNome(ContaEntity c){
-        nome.set((new StringBuilder(c.getBanco().getNome()).append(" - Ag: ")
-                .append(c.getAgencia()).append(" - CC: ").append(c.getNumero())).toString());
+    public void setNomeBanco(ContaEntity c){
+        nomeBanco.set(c.getBanco().getNome());
     }
 }

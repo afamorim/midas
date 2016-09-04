@@ -9,10 +9,15 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
+            <Menu mnemonicParsing="false" text="Principal">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToDashBoard" text="DashBoard" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#goToBancoForm" text="Bancos" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">

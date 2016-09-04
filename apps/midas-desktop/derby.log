@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Sep 02 19:37:12 BRT 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0156-ed0c-774e-000005860298 
+Sat Sep 03 08:47:38 BRT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0156-efe0-20c5-0000058a8078 
 on database directory /Users/antonio.amorim/desenvolvimento/projetos/midas/apps/midas-desktop/midas/midasdb with class loader sun.misc.Launcher$AppClassLoader@2a139a55 
 Loaded from file:/Users/antonio.amorim/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
 java.vendor=Oracle Corporation
